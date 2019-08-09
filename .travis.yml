@@ -1,0 +1,24 @@
+---
+language: python
+python: "3.6"
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: nginx
+  matrix:
+    - MOLECULE_DISTRO: debian10
+
+install:
+  - pip install molecule docker
+
+before_script:
+  - cd ../
+  - mv ansible-role-$ROLE_NAME ubzyhd.$ROLE_NAME
+  - cd ubzyhd.$ROLE_NAME
+
+script:
+  - molecule test
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

@@ -6,4 +6,5 @@
     autoremove: true
     autoclean: true
     install-recommends: false
+    policy_rc_d: "101"
     state: present
