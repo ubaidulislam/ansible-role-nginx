@@ -1,0 +1,13 @@
+---
+- name: NGINX | Running pre-setup of packages
+  include_tasks: "1-initial.yml"
+
+- name: NGINX | Setting Up Repository
+  include_tasks: "2-repository.yml"
+
+- name: NGINX | Installing NGINX
+  include_tasks: "3-install.yml"
+
+- name: NGINX | Applying Security configurations
+  include_tasks: "4-security.yml"
+  when: nginx_security_conf_apply

@@ -1,0 +1,10 @@
+---
+- name: repository.yml | Adding Ondrej Sury's NGINX apt key.
+  apt_key:
+    url: https://packages.sury.org/nginx/apt.gpg
+    state: present
+
+- name: repository.yml | Adding NGINX PPA
+  apt_repository:
+    repo: "deb https://packages.sury.org/nginx/ {{ ansible_distribution_release }} main"
+    state: present

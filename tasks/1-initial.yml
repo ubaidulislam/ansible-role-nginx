@@ -1,0 +1,18 @@
+---
+- name: initial.yml | Include OS-specific variables.
+  include_vars: "vars-{{ ansible_os_family }}.yml"
+
+# Update the server
+- name: initial.yml | Updating Server
+  apt:
+    update_cache: true
+    upgrade: dist
+    autoremove: true
+    purge: true
+
+- name: packages-{{ ansible_os_family }} | Installing Required Packages
+  apt:
+    name: "{{ required_packages }}"
+    update_cache: true
+    install-recommends: false
+    state: present

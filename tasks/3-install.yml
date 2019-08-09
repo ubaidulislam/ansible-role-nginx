@@ -1,0 +1,9 @@
+---
+- name: install.yml | Installing NGINX
+  apt:
+    name: nginx
+    update_cache: true
+    autoremove: true
+    autoclean: true
+    install-recommends: false
+    state: present
