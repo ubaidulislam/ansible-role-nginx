@@ -9,10 +9,3 @@
     upgrade: dist
     autoremove: true
     purge: true
-
-- name: packages-{{ ansible_os_family }} | Installing Required Packages
-  apt:
-    name: "{{ required_packages }}"
-    update_cache: true
-    install-recommends: false
-    state: present
