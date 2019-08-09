@@ -1,4 +1,7 @@
 ---
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+  shell: echo exit 101 > /usr/sbin/policy-rc.d
+
 - name: install.yml | Installing NGINX
   apt:
     name: nginx
