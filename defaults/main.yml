@@ -1,4 +1,2 @@
 ---
 # Global Defaults
-
-nginx_security_conf_apply: true
