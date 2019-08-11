@@ -1,0 +1,8 @@
+---
+- name: firewall.yml | Allow Web traffic through UFW
+  ufw:
+    rule: allow
+    name: "WWW Full"
+  notify:
+    - restart nginx
+  when: not ci_build_testing

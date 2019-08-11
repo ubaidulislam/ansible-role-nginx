@@ -8,5 +8,8 @@
 - name: NGINX | Installing NGINX
   include_tasks: "3-install.yml"
 
-- name: NGINX | Applying Security configurations
-  include_tasks: "4-security.yml"
+- name: NGINX | Applying NGINX configurations
+  include_tasks: "4-configurations.yml"
+
+- name: NGINX | Allow NGINX through Firewall
+  include_tasks: "4-configurations.yml"
