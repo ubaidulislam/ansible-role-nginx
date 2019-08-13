@@ -75,7 +75,7 @@ MIT
 
 ## Author Information
 
-This role was creating by Ubzy in 2019
+This role was created by Ubzy
 
 ## Credits
 
