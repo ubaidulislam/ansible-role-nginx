@@ -1,38 +1,87 @@
-Role Name
-=========
+# Ansible Role: NGINX
 
-A brief description of the role goes here.
+[![role: ubzyhd.nginx](https://img.shields.io/ansible/role/42671?color=blueviolet&logo=ansible&style=flat-square)](https://galaxy.ansible.com/ubzyhd/nginx)
 
-Requirements
-------------
+![Description from Ansible](https://img.shields.io/badge/dynamic/json?label=Description&style=flat-square&query=description&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Fcontent%2F42671%2F)
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+[![GitHub release](https://img.shields.io/github/release/ubzyhd/ansible-role-nginx)](https://GitHub.com/ubzyhd/ansible-role-nginx/releases/) [![GitHub tag](https://img.shields.io/github/tag/ubzyhd/ansible-role-nginx)](https://GitHub.com/ubzyhd/ansible-role-nginx/tags/)
 
-Role Variables
---------------
+[![HitCount](http://hits.dwyl.io/ubzyhd/ansible-role-nginx.svg)](http://hits.dwyl.io/ubzyhd/ansible-role-nginx)
+## Contents
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+- [Ansible Role: NGINX](#ansible-role-nginx)
+  - [Contents](#contents)
+  - [Role Info & Build Status](#role-info--build-status)
+  - [Supported OS's](#supported-oss)
+  - [Role Variables](#role-variables)
+  - [Example Playbook](#example-playbook)
+  - [License](#license)
+  - [Author Information](#author-information)
+  - [Credits](#credits)
 
-Dependencies
-------------
+## Role Info & Build Status
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+|Branch             | Master | Development |
+|-------------------|:--------:|:--------------:|
+| Build Status:      | [![travis-ci build status](https://img.shields.io/travis/UbzyHD/ansible-role-nginx/master?label=build&logo=travis-ci&style=flat-square)](https://travis-ci.org/UbzyHD/ansible-role-nginx)       |              |
+| Ansible Version: | [![https://galaxy.ansible.com/ubzyhd/nginx](https://img.shields.io/badge/dynamic/json?color=red&style=flat-square&label=Minimum%20Ansible%20Version%3A&query=min_ansible_version&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Fcontent%2F42671%2F)](https://galaxy.ansible.com/ubzyhd.nginx)       |              |
+| Statistics:  | [![https://galaxy.ansible.com/ubzyhd/nginx](https://img.shields.io/ansible/role/d/42671?color=blue&logo=ansible&style=flat-square)](https://galaxy.ansible.com/ubzyhd.nginx)<br>[![https://galaxy.ansible.com/ubzyhd/nginx](https://img.shields.io/badge/dynamic/json?color=blue&logo=ansible&style=flat-square&label=Quality%20Score:&query=quality_score&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Fcontent%2F42671%2F)](https://galaxy.ansible.com/ubzyhd.nginx)<br>[![https://galaxy.ansible.com/ubzyhd/nginx](https://img.shields.io/badge/dynamic/json?color=blue&logo=ansible&style=flat-square&label=Content%20Score%3A&query=content_score&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Fcontent%2F42671%2F)](https://galaxy.ansible.com/ubzyhd.nginx)<br>[![https://galaxy.ansible.com/ubzyhd/nginx](https://img.shields.io/badge/dynamic/json?color=blue&logo=ansible&style=flat-square&label=Metadata%20Score%3A&query=metadata_score&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Fcontent%2F42671%2F)](https://galaxy.ansible.com/ubzyhd.nginx)       |              |
 
-Example Playbook
-----------------
+## Supported OS's
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Debian:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+- 10 - Buster
+- 9 - Jessie
 
-License
--------
+## Role Variables
 
-BSD
+This role has no variables.
 
-Author Information
-------------------
+## Example Playbook
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+An example playbook with all the variables can be found called ```example-playbook-nginx.yml```
+
+or here:
+
+```yaml
+---
+- name: UbzyHD.NGINX Example Playbook
+  hosts: all
+  order: sorted
+
+  gather_facts: true
+  any_errors_fatal: true
+
+  pre_tasks:
+
+    - name: UbzyHD.NGINX Example Playbook | Pinging hosts.
+      action: ping
+
+    - name: UbzyHD.NGINX Example Playbook | Install Python if not already present.
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      changed_when: false
+
+    - name: UbzyHD.NGINX Example Playbook | Gather facts after Python is definitely present.
+      setup:
+
+  roles:
+    - ubzyhd.nginx
+```
+
+## License
+
+MIT
+
+## Author Information
+
+This role was creating by Ubzy in 2019
+
+## Credits
+
+Jeff Geerling:
+
+- [GitHub - geerlingguy](https://github.com/geerlingguy)
+- [Website - jeffgeerling.com](https://www.jeffgeerling.com/)
+
+>Without using his roles as the basis for mine, it wouldn't have been possible for me to create them.
